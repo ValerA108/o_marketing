@@ -759,3 +759,129 @@ ul.pricing__item {
   justify-content: space-between;
   align-items: center;
 }
+
+.connection {
+  padding: 145px 0 160px;
+  background-image: url('../assets/map.jpg');
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: right 65%;
+}
+
+.connection__title {
+  margin-bottom: 80px;
+}
+
+.form {
+  max-width: 570px;
+}
+
+.form input,
+.form textarea {
+  border: none;
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid #373A39;
+  padding: 16px 0;
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 3.7px;
+  color: #B8B8B8;
+  text-transform: uppercase;
+}
+
+.form textarea {
+  min-height: 140px;
+  resize: none;
+}
+
+.form button {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 17px 70px 15px;
+  border: none;
+  background: #242121;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+.footer {
+  padding: 110px 0 0px;
+  background-color: #333;
+  text-align: center;
+}
+
+.footer__logo {
+  display: inline-block;
+  padding: 0 35px 4px;
+  border-bottom: 2px solid #FCBB08;
+  margin-bottom: 70px;
+}
+
+.footer__social {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 65px;
+}
+
+
+.footer__social-link {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 4px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+.footer__contact {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 32px;
+  text-align: center;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  padding: 65px 0 57px;
+}
+
+.phone,
+.email {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 32px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.go-top {
+  display: inline-block;
+  margin-bottom: 60px;
+}
+
+.footer__copy {
+  text-align: center;
+  background: #2A2C2B;
+  padding: 40px 0;
+}
+
+.footer__copy p {
+  color: #CCCCCC;
+}
