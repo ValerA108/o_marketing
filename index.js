@@ -108,65 +108,65 @@ document.querySelector(".btn__right").addEventListener("click", function () {
   }
 });
 
-dot.addEventListener("click", function () {
-  if (isEnabled) {
-    currentItem;
-  }
-});
+// dot.addEventListener("click", function () {
+//   if (isEnabled) {
+//     currentItem;
+//   }
+// });
 
-const swipeDetect = (el) => {
-  let surface = el;
-  let startX = 0;
-  let startY = 0;
-  let distX = 0;
-  let distY = 0;
+// const swipeDetect = (el) => {
+//   let surface = el;
+//   let startX = 0;
+//   let startY = 0;
+//   let distX = 0;
+//   let distY = 0;
 
-  let startTime = 0;
-  let elapsedTime = 0;
+//   let startTime = 0;
+//   let elapsedTime = 0;
 
-  let threshold = 150;
-  let restraint = 100;
-  let allowedTime = 300;
+//   let threshold = 150;
+//   let restraint = 100;
+//   let allowedTime = 300;
 
-  surface.addEventListener(
-    "mousedown",
-    function (e) {
-      dist = 0;
-      startX = e.pageX;
-      startY = e.pageY;
-      startTime = new Date().getTime();
-      e.preventDefault();
-    },
-    false
-  );
+//   surface.addEventListener(
+//     "mousedown",
+//     function (e) {
+//       dist = 0;
+//       startX = e.pageX;
+//       startY = e.pageY;
+//       startTime = new Date().getTime();
+//       e.preventDefault();
+//     },
+//     false
+//   );
 
-  surface.addEventListener(
-    "mouseup",
-    function (e) {
-      distX = e.pageX - startX;
-      distY = e.pageY - startY;
-      elapsedTime = new Date().getTime() - startTime();
+//   surface.addEventListener(
+//     "mouseup",
+//     function (e) {
+//       distX = e.pageX - startX;
+//       distY = e.pageY - startY;
+//       elapsedTime = new Date().getTime() - startTime();
 
-      if (elapsedTime <= allowedTime) {
-        if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
-          if (distX > 0) {
-            if (isEnabled) {
-              previousItem(currentItem);
-            }
-          } else {
-            if (isEnabled) {
-              nextItem(currentItem);
-            }
-          }
-        }
-      }
-      e.preventDefault();
-    },
-    false
-  );
-};
-let el = document.querySelector(".carousel");
-swipeDetect(el);
+//       if (elapsedTime <= allowedTime) {
+//         if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
+//           if (distX > 0) {
+//             if (isEnabled) {
+//               previousItem(currentItem);
+//             }
+//           } else {
+//             if (isEnabled) {
+//               nextItem(currentItem);
+//             }
+//           }
+//         }
+//       }
+//       e.preventDefault();
+//     },
+//     false
+//   );
+// };
+// let el = document.querySelector(".carousel");
+// swipeDetect(el);
 
 // end slider //
 
@@ -239,3 +239,36 @@ swipeDetect(el);
 // import img from './assets/logo.svg';
 
 // document.body.innerHTML = `<img src="${img}" alt="logo"`;
+
+// burger-menu start
+
+const HEADER_TOP = document.querySelector(".header__top-inner");
+// const MENU_LIST = document.querySelector(".menu__list");
+// const LOGO = document.querySelector(".logo");
+// const MENU_BTN = document.querySelector(".menu__btn");
+
+HEADER_TOP.addEventListener("click", function () {
+  HEADER_TOP.classList.toggle("header__top-inner--active");
+});
+
+//smooth scroll
+
+document.querySelectorAll('a[href^="#"').forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    let href = this.getAttribute("href").substring(1);
+
+    const scrollTarget = document.getElementById(href);
+
+    const topOffset = document.querySelector(".menu, .go-top").offsetHeight;
+    //const topOffset = 0; // если не нужен отступ сверху
+    const elementPosition = scrollTarget.getBoundingClientRect().top;
+    const offsetPosition = elementPosition - topOffset;
+
+    window.scrollBy({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  });
+});
